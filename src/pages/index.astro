@@ -7,123 +7,119 @@ import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
 
 <!doctype html>
 <html lang="en">
-    <head>
-        <script>
-            
-            const lines = ["Welcome To AURA", "Best AIML CLUB"];
-            let lineIndex = 0;
-            let wordIndex = 0;
-            let charIndex = 0;
-            let intervalId;
+  <head>
+    <script>
+      const lines = ["Welcome To AURA", "Best AIML CLUB"];
+      let lineIndex = 0;
+      let wordIndex = 0;
+      let charIndex = 0;
+      let intervalId: NodeJS.Timer;
 
-            function typeText() {
-                const currentLine = lines[lineIndex];
-                const words = currentLine.split(" ");
+      function typeText() {
+        const currentLine = lines[lineIndex];
+        const words = currentLine.split(" ");
 
-                if (charIndex < words[wordIndex].length) {
-                    document.getElementById(
-                        `line${lineIndex + 1}`,
-                    ).textContent += words[wordIndex][charIndex];
-                    charIndex++;
-                } else {
-                    document.getElementById(
-                        `line${lineIndex + 1}`,
-                    ).textContent += " "; // Add space between words
-                    charIndex = 0;
-                    wordIndex++;
-                }
+        if (charIndex < words[wordIndex].length) {
+          document.getElementById(`line${lineIndex + 1}`)!.textContent +=
+            words[wordIndex][charIndex];
+          charIndex++;
+        } else {
+          document.getElementById(`line${lineIndex + 1}`)!.textContent += " "; // Add space between words
+          charIndex = 0;
+          wordIndex++;
+        }
 
-                if (wordIndex >= words.length) {
-                    lineIndex++;
-                    wordIndex = 0;
-                    if (lineIndex >= lines.length) {
-                        clearInterval(intervalId);
-                    }
-                }
-            }
+        if (wordIndex >= words.length) {
+          lineIndex++;
+          wordIndex = 0;
+          if (lineIndex >= lines.length) {
+            clearInterval(intervalId);
+          }
+        }
+      }
 
-            // Set an interval to call the typeText function
-            intervalId = setInterval(typeText, 100); // Adjust the interval as needed
-        </script>
-        <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
-        <style>
-            body {
-                margin: 0;
-                padding: 0;
-                font-family: "Arial", sans-serif;
-            }
+      // Set an interval to call the typeText function
+      intervalId = setInterval(typeText, 100); // Adjust the interval as needed
+    </script>
+    <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+    <style>
+      body {
+        margin: 0;
+        padding: 0;
+        font-family: "Arial", sans-serif;
+      }
 
-            main {
-                height: 100vh;
-                width: max-content;
-                display: flex;
-                flex-direction: column;
-                align-items: center;
-                background-image: url("../../public/background_main.jpg");
-                /* background-size: cover; */
-                /* background-position: center; */
-            }
+      main {
+        height: 100vh;
+        width: max-content;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        /* background-image: url("../../public/background_main.jpg"); */
+        /* background-size: cover; */
+        /* background-position: center; */
+      }
 
-            .loader {
-                height: 253px;
-                width: 300px;
-                /* background-image: url("../../public/home_bg.jpg"); */
-                background-size: cover;
-                animation: spin 1.2s linear;
-                transform-origin: left;
-                margin-bottom: 20px;
-            }
+      .loader {
+        height: 253px;
+        width: 300px;
+        /* background-image: url("../../public/home_bg.jpg"); */
+        background-size: cover;
+        animation: spin 1.2s linear;
+        transform-origin: left;
+        margin-bottom: 20px;
+      }
 
-            .loader.large {
-                transform: scale(1);
-                margin-left: -1090px;
-                margin-top: -550px;
-            }
+      .loader.large {
+        transform: scale(1);
+        margin-left: -1090px;
+        margin-top: -550px;
+      }
 
-            .main-container {
-                display: flex;
-                flex-wrap: wrap;
-                flex-direction: row;
-            }
+      .main-container {
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: row;
+      }
 
-            /* Media query for mobile view */
-            @media only screen and (max-width: 600px) {
-                main {
-                    height: auto;
-                    background-image: none; /* Remove background image */
-                }
+      /* Media query for mobile view */
+      @media only screen and (max-width: 600px) {
+        main {
+          height: auto;
+          /* background-image: none; Remove background image */
+        }
 
-                .loader.large {
-                    transform: scale(1);
-                    margin: 0;
-                }
-            }
-        </style>
-    </head>
-    <body>
-        <Header title={SITE_TITLE} />
-        <main>
-            <div class="main-container mx-24">
-                <div class="text-container my-4 md:my-20">
-                    <h1 id="line1" class="pl-4 text-green-600 text-5xl"></h1>
-                    <h1 id="line2" class="pl-4 text-gray-800 text-3xl"></h1>
-                </div>
-                <div
-                    class="loader mx-2 md:mx-24 my-4 md:my-12 mt-4 md:mt-28"
-                    id="loader"
-                >
-                    <img src="../../public/home_bg.jpg" class="w-full h-auto" />
-                </div>
-                <div id = "frame" class = "w-96 h-96 bg-green-800 mt-24 mx-10 ">
-                    <div id = "prev" class = "my-48 text-3xl hover:bg-white w-6 "> &lt;
-
-                </div>
-                <div id = "prev" class = " ml-80 text-3xl hover:bg-white w-6 "> &gt;
-
-                </div>
-                
-            </div>
-        </main>
-        <Footer />
-    </body>
+        .loader.large {
+          transform: scale(1);
+          margin: 0;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <Header title={SITE_TITLE} />
+    <main>
+      <div class="main-container mx-24">
+        <div class="text-container my-4 md:my-20">
+          <h1 id="line1" class="pl-4 text-green-600 text-5xl"></h1>
+          <h1 id="line2" class="pl-4 text-gray-800 text-3xl"></h1>
+        </div>
+        <div
+          class="loader mx-2 md:mx-24 my-4 md:my-12 mt-4 md:mt-28"
+          id="loader"
+        >
+          <img
+            src="/home_bg.jpg"
+            alt="Aura logo"
+            class="w-full h-auto rounded-none"
+          />
+        </div>
+        <div id="frame" class="w-96 h-96 bg-green-800 mt-24 mx-10">
+          <div id="prev" class="my-48 text-3xl hover:bg-white w-6">&lt;</div>
+          <div id="prev" class="ml-80 text-3xl hover:bg-white w-6">&gt;</div>
+        </div>
+      </div>
+      <Footer />
+    </main>
+  </body>
 </html>
