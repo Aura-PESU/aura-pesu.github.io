@@ -11,7 +11,7 @@ import Carousel from "../components/Carousel.jsx";
   <head>
     <script>
       const lines = [
-        "Welcome To AURA",
+        "Welcome To Aura",
         "The Machine Learning Club of PES University",
       ];
       let lineIndex = 0;
@@ -104,11 +104,13 @@ import Carousel from "../components/Carousel.jsx";
     <Header title={SITE_TITLE} />
     <main>
       <div
-        class="main-container mx-auto items-center flex flex-col lg:flex-row"
+        class="main-container mx-auto items-center grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4"
       >
-        <div class="text-container my-4 md:my-20 w-full lg:w-1/3 mx-auto">
-          <h1 id="line1" class="pl-4 text-green-600 text-5xl"></h1>
-          <h1 id="line2" class="pl-4 text-gray-800 text-3xl"></h1>
+        <div
+          class="text-container my-4 md:my-20 w-full lg:w-1/3 mx-auto text-center"
+        >
+          <h1 id="line1" class="text-green-600 text-5xl"></h1>
+          <h1 id="line2" class="text-gray-800 text-3xl"></h1>
         </div>
         <div class="loader w-full lg:w-1/3 mx-auto" id="loader">
           <img
