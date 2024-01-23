@@ -1,5 +1,3 @@
-import React from "react";
-
 const HeaderLink = ({ href, children }) => {
   return <a href={href}>{children}</a>;
 };
