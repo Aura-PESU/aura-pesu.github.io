@@ -1,50 +1,127 @@
 ---
-import BaseHead from '../components/BaseHead.astro';
-import Header from '../components/Header.astro';
-import Footer from '../components/Footer.astro';
-import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
+import BaseHead from "../components/BaseHead.astro";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
+import Carousel from "../components/Carousel.jsx";
 ---
 
 <!doctype html>
 <html lang="en">
-	<head>
-		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
-	</head>
-	<body>
-		<Header title={SITE_TITLE} />
-		<main>
-			<h1>🧑‍🚀 Hello, Astronaut!</h1>
-			<p>
-				Welcome to the official <a href="https://astro.build/">Astro</a> blog starter template. This
-				template serves as a lightweight, minimally-styled starting point for anyone looking to build
-				a personal website, blog, or portfolio with Astro.
-			</p>
-			<p>
-				This template comes with a few integrations already configured in your
-				<code>astro.config.mjs</code> file. You can customize your setup with
-				<a href="https://astro.build/integrations">Astro Integrations</a> to add tools like Tailwind,
-				React, or Vue to your project.
-			</p>
-			<p>Here are a few ideas on how to get started with the template:</p>
-			<ul>
-				<li>Edit this page in <code>src/pages/index.astro</code></li>
-				<li>Edit the site header items in <code>src/components/Header.astro</code></li>
-				<li>Add your name to the footer in <code>src/components/Footer.astro</code></li>
-				<li>Check out the included blog posts in <code>src/pages/blog/</code></li>
-				<li>Customize the blog post page layout in <code>src/layouts/BlogPost.astro</code></li>
-			</ul>
-			<p>
-				Have fun! If you get stuck, remember to <a href="https://docs.astro.build/"
-					>read the docs
-				</a> or <a href="https://astro.build/chat">join us on Discord</a> to ask questions.
-			</p>
-			<p>
-				Looking for a blog template with a bit more personality? Check out <a
-					href="https://github.com/Charca/astro-blog-template"
-					>astro-blog-template
-				</a> by <a href="https://twitter.com/Charca">Maxi Ferreira</a>.
-			</p>
-		</main>
-		<Footer />
-	</body>
+  <head>
+    <script>
+      const lines = [
+        "Welcome To Aura",
+        "The Machine Learning Club of PES University",
+      ];
+      let lineIndex = 0;
+      let wordIndex = 0;
+      let charIndex = 0;
+      let intervalId: NodeJS.Timer;
+
+      function typeText() {
+        const currentLine = lines[lineIndex];
+        const words = currentLine.split(" ");
+
+        if (charIndex < words[wordIndex].length) {
+          document.getElementById(`line${lineIndex + 1}`)!.textContent +=
+            words[wordIndex][charIndex];
+          charIndex++;
+        } else {
+          document.getElementById(`line${lineIndex + 1}`)!.textContent += " "; // Add space between words
+          charIndex = 0;
+          wordIndex++;
+        }
+
+        if (wordIndex >= words.length) {
+          lineIndex++;
+          wordIndex = 0;
+          if (lineIndex >= lines.length) {
+            clearInterval(intervalId);
+          }
+        }
+      }
+
+      // Set an interval to call the typeText function
+      intervalId = setInterval(typeText, 50); // Adjust the interval as needed
+    </script>
+    <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+    <style>
+      body {
+        margin: 0;
+        padding: 0;
+        font-family: "Arial", sans-serif;
+      }
+
+      main {
+        height: 100vh;
+        width: max-content;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        /* background-image: url("../../public/background_main.jpg"); */
+        /* background-size: cover; */
+        /* background-position: center; */
+      }
+
+      .loader {
+        height: 253px;
+        width: 300px;
+        /* background-image: url("../../public/home_bg.jpg"); */
+        background-size: cover;
+        animation: spin 1.2s linear;
+        transform-origin: left;
+        margin-bottom: 20px;
+      }
+
+      .loader.large {
+        transform: scale(1);
+        margin-left: -1090px;
+        margin-top: -550px;
+      }
+
+      .main-container {
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: row;
+      }
+
+      /* Media query for mobile view */
+      @media only screen and (max-width: 600px) {
+        main {
+          height: auto;
+          /* background-image: none; Remove background image */
+        }
+
+        .loader.large {
+          transform: scale(1);
+          margin: 0;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <Header title={SITE_TITLE} />
+    <main>
+      <div
+        class="main-container mx-auto items-center grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4"
+      >
+        <div
+          class="text-container my-4 md:my-20 w-full lg:w-1/3 mx-auto text-center"
+        >
+          <h1 id="line1" class="text-green-600 text-5xl"></h1>
+          <h1 id="line2" class="text-gray-800 text-3xl"></h1>
+        </div>
+        <div class="loader w-full lg:w-1/3 mx-auto" id="loader">
+          <img
+            src="/home_bg.png"
+            alt="Aura logo"
+            class="w-full h-auto rounded-none"
+          />
+        </div>
+        <Carousel client:load />
+      </div>
+    </main>
+    <Footer />
+  </body>
 </html>
