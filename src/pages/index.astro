@@ -17,9 +17,8 @@ import Carousel from "../components/Carousel.jsx";
       let lineIndex = 0;
       let wordIndex = 0;
       let charIndex = 0;
-      let intervalId: any;
 
-      function typeText() {
+      function typeText(interval: number) {
         const currentLine = lines[lineIndex];
         const words = currentLine.split(" ");
 
@@ -37,13 +36,15 @@ import Carousel from "../components/Carousel.jsx";
           lineIndex++;
           wordIndex = 0;
           if (lineIndex >= lines.length) {
-            clearInterval(intervalId);
+            return;
           }
         }
+
+        setTimeout(typeText, interval);
       }
 
       // Set an interval to call the typeText function
-      intervalId = setInterval(typeText, 50); // Adjust the interval as needed
+      typeText(50);
     </script>
     <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
     <style>
