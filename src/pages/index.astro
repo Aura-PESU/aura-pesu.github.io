@@ -3,6 +3,7 @@ import BaseHead from "../components/BaseHead.astro";
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
 import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
+import Carousel from "../components/Carousel.jsx";
 ---
 
 <!doctype html>
@@ -114,10 +115,7 @@ import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
             class="w-full h-auto rounded-none"
           />
         </div>
-        <div id="frame" class="w-96 h-96 bg-green-800 mt-24 mx-10">
-          <div id="prev" class="my-48 text-3xl hover:bg-white w-6">&lt;</div>
-          <div id="prev" class="ml-80 text-3xl hover:bg-white w-6">&gt;</div>
-        </div>
+        <Carousel client:load />
       </div>
       <Footer />
     </main>
