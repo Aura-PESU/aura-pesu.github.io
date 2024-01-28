@@ -72,17 +72,17 @@ import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
     <script>
       // Function to show the dialog box
       function showDialog() {
-        document.getElementById("dialog").classList.remove("hidden");
+        document.getElementById("dialog")!.classList.remove("hidden");
       }
 
       // Function to close the dialog box
       function closeDialog() {
-        document.getElementById("dialog").classList.add("hidden");
+        document.getElementById("dialog")!.classList.add("hidden");
       }
 
       // Event listeners for each event box
-      document.getElementById("event1").addEventListener("click", showDialog);
-      document.getElementById("event2").addEventListener("click", showDialog);
+      document.getElementById("event1")!.addEventListener("click", showDialog);
+      document.getElementById("event2")!.addEventListener("click", showDialog);
     </script>
   </body>
 </html>
