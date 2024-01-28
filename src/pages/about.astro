@@ -3,7 +3,7 @@ import BaseHead from "../components/BaseHead.astro";
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
 import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
-import hero from "../assets/About/Hand.png";
+import hero from "../../public/home_bg.png";
 import { Image } from "astro:assets";
 import Logs from "../assets/About/Logistics.png";
 import Ops from "../assets/About/Operations.png";
@@ -11,33 +11,66 @@ import SandO from "../assets/About/Social_and_Outreach.png";
 import Sponsor from "../assets/About/Sponsorship.png";
 import Tech from "../assets/About/Technical.png";
 import Vid from "../assets/About/Video.png";
+import AboutDomain from "../components/AboutDomain.astro";
+
+const domains = [
+  {
+    title: "Technical",
+    content:
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus, possimus.",
+    img: Tech,
+  },
+  {
+    title: "Operations",
+    content:
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus, possimus.",
+    img: Ops,
+  },
+  {
+    title: "Social and Outreach",
+    content:
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus, possimus.",
+    img: SandO,
+  },
+  {
+    title: "Sponsorship",
+    content:
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus, possimus.",
+    img: Sponsor,
+  },
+  {
+    title: "Logs",
+    content:
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus, possimus.",
+    img: Logs,
+  },
+  {
+    title: "Videography and Editing",
+    content:
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus, possimus.",
+    img: Vid,
+  },
+];
 ---
 
 <!doctype html>
-<html lang="en" class="bg-black">
+<html lang="en">
   <head>
     <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
   </head>
-  <body class="text-white">
+  <body>
     <Header title={SITE_TITLE} />
-    <main class="w-full bg-black">
-      <div class="flex flex-col gap-20">
+    <main class="w-screen">
+      <div class="flex flex-col gap-y-8">
         <section>
-          <h1
-            style="width: 100%; 
-            text-align: center; 
-            border-bottom: 1px solid #1dd726; 
-            line-height: 0.1em;
-            margin: 10px 0 20px;
-            color: #1dd726; "
+          <h1 class="text-left font-bold">About Aura</h1>
+          <section
+            class="flex flex-col lg:flex-row-reverse justify-between items-center"
           >
-            <span
-              style="padding: 0 10px; background:#000; color: #1dd726;"
-              class="font-semibold">About Club</span
-            >
-          </h1>
-          <section class="flex justify-between">
-            <div class="w-2/3 pt-32 flex flex-col">
+            <div class="w-full lg:w-2/5 flex rounded-none justify-center">
+              <Image class="rounded-none" src={hero} alt="img" width={400} />
+            </div>
+            <div class="w-full lg:w-3/5 py-6 flex flex-col">
               <div>
                 Lorem ipsum dolor sit amet consectetur, adipisicing elit.
                 Adipisci alias ipsum fuga fugiat labore ducimus natus
@@ -47,196 +80,25 @@ import Vid from "../assets/About/Video.png";
                 cupiditate similique fugit, dicta natus molestiae, velit fuga
                 dolorem numquam aut.
               </div>
-              <br />
-              <div>
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                Dolorum, ipsam ducimus? Nemo quaerat iusto aut. Dolor incidunt
-                voluptates quos tempore repellat cumque nisi laudantium cum
-                soluta quas. Consectetur dolorum ipsum sequi dolore earum
-                tempore animi hic similique voluptates magni, perspiciatis esse
-                repudiandae obcaecati eveniet illo nisi laborum quod fugiat
-                magnam recusandae voluptatum provident at tempora. Ipsam
-                perspiciatis exercitationem, nemo quasi totam dolores aut hic
-                dolore, sapiente alias placeat. Consequatur, provident!
-              </div>
-              <br />
-              <div>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Accusamus, possimus.
-              </div>
-            </div>
-            <div class="w-1/3 flex justify-center">
-              <Image src={hero} alt="img" width={400} />
             </div>
           </section>
         </section>
         <section>
-          <h1
-            style="width: 100%; 
-            text-align: center; 
-            border-bottom: 1px solid #1dd726; 
-            line-height: 0.1em;
-            margin: 10px 0 20px;
-            color: #1dd726; "
-          >
-            <span
-              style="padding: 0 10px; background:#000; color: #1dd726;"
-              class="font-semibold">Domain Info</span
-            >
-          </h1>
-          <section class="grid grid-cols-4 w-full gap-5 mt-20">
-            <div class="rounded shadow-lg border border-white">
-              <div style="background: #E8FAE9;">
-                <Image class="w-full" src={Logs} alt="img" />
-              </div>
-              <div
-                class="text-xl flex justify-center"
-                style="background: #E8FAE9"
-              >
-                <span
-                  style="background: #104C2D; border-radius: 90px 90px 0 0; padding: 10px 30px;"
-                  class="text-center text-3xl pt-2"
-                >
-                  1
-                </span>
-              </div>
-
-              <div style="background-color: #104C2D;" class="p-4">
-                <div class="font-bold text-xl text-center">Logistics</div>
-                <p class="text-gray-300 text-base py-8">
-                  Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                  Voluptatibus quia
-                </p>
-              </div>
-            </div>
-            <div class="rounded shadow-lg border border-white">
-              <div style="background: #E8FAE9;">
-                <Image class="w-full" src={Ops} alt="img" />
-              </div>
-              <div
-                class="text-xl flex justify-center"
-                style="background: #E8FAE9"
-              >
-                <span
-                  style="background: #104C2D; border-radius: 90px 90px 0 0; padding: 10px 30px;"
-                  class="text-center text-3xl pt-2"
-                >
-                  2
-                </span>
-              </div>
-
-              <div style="background-color: #104C2D;" class="p-4">
-                <div class="font-bold text-xl text-center">Operations</div>
-                <p class="text-gray-300 text-base py-8">
-                  Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                  Voluptatibus quia
-                </p>
-              </div>
-            </div>
-            <div class="rounded shadow-lg border border-white">
-              <div style="background: #E8FAE9;">
-                <Image class="w-full" src={SandO} alt="img" />
-              </div>
-              <div
-                class="text-xl flex justify-center"
-                style="background: #E8FAE9"
-              >
-                <span
-                  style="background: #104C2D; border-radius: 90px 90px 0 0; padding: 10px 30px;"
-                  class="text-center text-3xl pt-2"
-                >
-                  3
-                </span>
-              </div>
-
-              <div style="background-color: #104C2D;" class="p-4">
-                <div class="font-bold text-xl text-center">
-                  Social and Outreach
-                </div>
-                <p class="text-gray-300 text-base py-8">
-                  Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                  Voluptatibus quia
-                </p>
-              </div>
-            </div>
-            <div class="rounded shadow-lg border border-white">
-              <div style="background: #E8FAE9;">
-                <Image class="w-full" src={Sponsor} alt="img" />
-              </div>
-              <div
-                class="text-xl flex justify-center"
-                style="background: #E8FAE9"
-              >
-                <span
-                  style="background: #104C2D; border-radius: 90px 90px 0 0; padding: 10px 30px;"
-                  class="text-center text-3xl pt-2"
-                >
-                  4
-                </span>
-              </div>
-
-              <div style="background-color: #104C2D;" class="p-4">
-                <div class="font-bold text-xl text-center">Sponsership</div>
-                <p class="text-gray-300 text-base py-8">
-                  Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                  Voluptatibus quia
-                </p>
-              </div>
-            </div>
-            <div class="rounded shadow-lg border border-white">
-              <div style="background: #E8FAE9;">
-                <Image class="w-full" src={Tech} alt="img" />
-              </div>
-              <div
-                class="text-xl flex justify-center"
-                style="background: #E8FAE9"
-              >
-                <span
-                  style="background: #104C2D; border-radius: 90px 90px 0 0; padding: 10px 30px;"
-                  class="text-center text-3xl pt-2"
-                >
-                  5
-                </span>
-              </div>
-
-              <div style="background-color: #104C2D;" class="p-4">
-                <div class="font-bold text-xl text-center">Technical</div>
-                <p class="text-gray-300 text-base py-8">
-                  Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                  Voluptatibus quia
-                </p>
-              </div>
-            </div>
-            <div class="rounded shadow-lg border border-white">
-              <div style="background: #E8FAE9;">
-                <Image class="w-full" src={Vid} alt="img" />
-              </div>
-              <div
-                class="text-xl flex justify-center"
-                style="background: #E8FAE9"
-              >
-                <span
-                  style="background: #104C2D; border-radius: 90px 90px 0 0; padding: 10px 30px;"
-                  class="text-center text-3xl pt-2"
-                >
-                  6
-                </span>
-              </div>
-
-              <div style="background-color: #104C2D;" class="p-4">
-                <div class="font-bold text-xl text-center">
-                  Videography and Editing
-                </div>
-                <p class="text-gray-300 text-base py-8">
-                  Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                  Voluptatibus quia
-                </p>
-              </div>
-            </div>
+          <h1 class="text-left font-bold">Domains</h1>
+          <section class="grid grid-cols-1 lg:grid-cols-3 w-full gap-5 mt-20">
+            {
+              domains.map((domain) => (
+                <AboutDomain
+                  title={domain.title}
+                  content={domain.content}
+                  img={domain.img}
+                />
+              ))
+            }
           </section>
         </section>
       </div>
-      <Footer />
     </main>
+    <Footer />
   </body>
 </html>
