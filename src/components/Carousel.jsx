@@ -12,7 +12,7 @@ import EpochWorkshopImg from "../assets/workshop.jpeg";
 export default () => {
   return (
       <Swiper
-        className="w-80 lg:w-1/3 h-48 lg:h-96 rounded-lg text-white"
+        className="w-full lg:w-1/3 h-48 lg:h-96 rounded-lg text-white"
         modules={[Pagination, A11y, Autoplay]}
         slidesPerView={1}
         pagination={{ clickable: true }}

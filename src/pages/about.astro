@@ -63,11 +63,11 @@ const domains = [
     <main class="w-screen">
       <div class="flex flex-col gap-y-8">
         <section>
-          <h1 class="text-left font-bold">About Aura</h1>
+          <h1 class="text-left font-bold">About Us</h1>
           <section
             class="flex flex-col lg:flex-row-reverse justify-between items-center"
           >
-            <div class="w-full lg:w-2/5 flex rounded-none justify-center">
+            <div class="w-full lg:w-2/5 flex rounded-none justify-center p-8">
               <Image class="rounded-none" src={hero} alt="img" width={400} />
             </div>
             <div class="w-full lg:w-3/5 py-6 flex flex-col">
@@ -85,7 +85,7 @@ const domains = [
         </section>
         <section>
           <h1 class="text-left font-bold">Domains</h1>
-          <section class="grid grid-cols-1 lg:grid-cols-3 w-full gap-5 mt-20">
+          <section class="grid grid-cols-1 lg:grid-cols-3 w-full gap-8 mt-20">
             {
               domains.map((domain) => (
                 <AboutDomain
