@@ -13,49 +13,29 @@ import { Image } from "astro:assets";
       <Image
         src={AIMLLogo}
         alt="AIML Department"
-        class="h-48 w-48 aspect-square object-contain"
+        class="h-40 w-40 aspect-square object-contain"
       />
-      <div class="social-icons text-primary">
+      <div
+        class="social-icons flex flex-col md:flex-row gap-2 md:gap-6 items-center"
+      >
         <a href="https://www.linkedin.com/company/aura-pesu/"
-          ><i class="fa-brands fa-linkedin"></i></a
+          ><i class="fa-brands fa-linkedin text-black"></i></a
         >
         <a href="https://github.com/Aura-PESU"
-          ><i class="fa-brands fa-github"></i></a
+          ><i class="fa-brands fa-github text-black"></i></a
         >
         <a href="https://www.instagram.com/aura_pesu/"
-          ><i class="fa-brands fa-instagram"></i></a
+          ><i class="fa-brands fa-instagram text-black"></i></a
         >
         <a href="mailto: aura.rr@pes.edu"
-          ><i class="fa-solid fa-envelope"></i></a
+          ><i class="fa-solid fa-envelope text-black"></i></a
         >
       </div>
       <Image
         src={PESULogo}
         alt="PES University"
-        class="h-48 w-48 aspect-square object-contain"
+        class="h-40 w-40 aspect-square object-contain"
       />
     </section>
   </footer>
 </body>
-
-<style>
-  .social-icons .fa-brands,
-  .fa-solid {
-    width: 60px;
-    height: 60px;
-    border-radius: 50%;
-    text-align: center;
-    line-height: 40px;
-    font-size: 25px;
-    margin-right: 10px;
-    margin-top: 20px;
-    cursor: pointer;
-    transition: 0.3s;
-    color: black;
-  }
-  .social-icons .fa-brands:hover,
-  .fa-solid:hover {
-    color: #50c878;
-    /* color:#558839;	 */
-  }
-</style>
