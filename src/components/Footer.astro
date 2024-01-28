@@ -1,7 +1,24 @@
 ---
-
+import PESULogo from "../../public/footer_pesu.png";
+import AIMLLogo from "../../public/footer_aiml.png";
+import { Image } from "astro:assets";
 ---
 
 <footer>
-  <div class="bg-black h-52 text-white">hi from the footer</div>
+  <section class="h-56 flex flex-row justify-between items-center p-8 mb-6">
+    <Image
+      src={AIMLLogo}
+      alt="AIML Department"
+      class="h-48 w-48 aspect-square object-contain"
+    />
+    <p>
+      Phone: aiml@placeholder.cum<br />
+      Email: +91 696969969<br />
+    </p>
+    <Image
+      src={PESULogo}
+      alt="PES University"
+      class="h-48 w-48 aspect-square object-contain"
+    />
+  </section>
 </footer>

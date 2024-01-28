@@ -17,11 +17,11 @@ import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
   <body>
     <Header title={SITE_TITLE} />
     <main class="bg-fblack p-8">
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+      <div class="flex flex-wrap gap-8">
         <!-- Event 1 -->
         <div
           id="event1"
-          class="bg-white rounded-lg overflow-hidden shadow-md transition-transform transform hover:scale-105 cursor-pointer"
+          class="lg:h-max-v-screen lg:w-full bg-white rounded-lg overflow-hidden shadow-md transition-transform transform hover:scale-105 cursor-pointer"
         >
           <img
             src="https://placekitten.com/400/300"
@@ -37,7 +37,7 @@ import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
         <!-- Event 2 -->
         <div
           id="event2"
-          class="bg-white rounded-lg overflow-hidden shadow-md transition-transform transform hover:scale-105 cursor-pointer"
+          class="lg:h-full lg:w-full bg-white rounded-lg overflow-hidden shadow-md transition-transform transform hover:scale-105 cursor-pointer"
         >
           <img
             src="https://placekitten.com/401/300"
@@ -60,7 +60,7 @@ import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
           <h2 class="text-2xl font-semibold mb-4">Event Details</h2>
           <p>Details of the selected event go here.</p>
           <button
-            onclick="closeDialog()"
+            onclick="document.getElementById('dialog').classList.add('hidden');"
             class="mt-4 bg-blue-500 text-white px-4 py-2 rounded">Close</button
           >
         </div>
@@ -72,17 +72,17 @@ import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
     <script>
       // Function to show the dialog box
       function showDialog() {
-        document.getElementById("dialog")!.classList.remove("hidden");
+        document.getElementById("dialog").classList.remove("hidden");
       }
 
       // Function to close the dialog box
       function closeDialog() {
-        document.getElementById("dialog")!.classList.add("hidden");
+        document.getElementById("dialog").classList.add("hidden");
       }
 
       // Event listeners for each event box
-      document.getElementById("event1")!.addEventListener("click", showDialog);
-      document.getElementById("event2")!.addEventListener("click", showDialog);
+      document.getElementById("event1").addEventListener("click", showDialog);
+      document.getElementById("event2").addEventListener("click", showDialog);
     </script>
   </body>
 </html>
