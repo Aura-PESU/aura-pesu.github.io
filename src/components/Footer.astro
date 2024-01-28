@@ -2,6 +2,96 @@
 
 ---
 
-<footer>
-  <div class="bg-black h-52 text-white">hi from the footer</div>
-</footer>
+<head>
+  <script src="https://kit.fontawesome.com/8e64ffa55c.js"></script>
+</head>
+<body>
+  <footer>
+    <div class="row">
+      <div class="col1">
+        <div class="pesu-logo"></div>
+      </div>
+
+      <div class="col2">
+        <p>
+          Adapt to the future with AURA , Connect, Collaborate, and Code with
+          us!
+        </p>
+        <!-- change para content -->
+      </div>
+      <div class="social-icons">
+        <a href="https://www.linkedin.com/company/aura-pesu/"
+          ><i class="fa-brands fa-linkedin"></i></a
+        >
+        <a href="https://github.com/Aura-PESU"
+          ><i class="fa-brands fa-github"></i></a
+        >
+        <a href="https://www.instagram.com/aura_pesu/"
+          ><i class="fa-brands fa-instagram"></i></a
+        >
+        <a href="mailto: aura.rr@pes.edu"
+          ><i class="fa-solid fa-envelope"></i></a
+        >
+      </div>
+    </div>
+  </footer>
+</body>
+
+<style>
+  footer {
+    background-color: #000000;
+    color: #ffffff;
+    padding: 80px 0 4px;
+    bottom: 0;
+    font-size: 13px;
+    line-height: 20px;
+  }
+  .row {
+    width: 85%;
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    justify-content: space-between;
+  }
+  .col1 {
+    flex-basis: 25%;
+    padding: 10px;
+  }
+
+  .col2 p {
+    font-size: 18px;
+    width: 320px;
+  }
+  .col2 {
+    flex-basis: 25%;
+    padding: 10px;
+  }
+  .pesu-logo {
+    width: 155px;
+    height: 70px;
+    margin-bottom: 30px;
+    background-image: url("../assets/Footer/pesu-logo.webp");
+    font-size: 100px;
+  }
+
+  .social-icons .fa-brands,
+  .fa-solid {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 40px;
+    font-size: 25px;
+    margin-right: 10px;
+    margin-top: 20px;
+    cursor: pointer;
+    transition: 0.3s;
+    color: #ffffff;
+  }
+  .social-icons .fa-brands:hover,
+  .fa-solid:hover {
+    color: #50c878;
+    /* color:#558839;	 */
+  }
+</style>

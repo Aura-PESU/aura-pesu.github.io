@@ -1,0 +1,93 @@
+---
+import BaseHead from '../components/BaseHead.astro';
+import Footer from '../components/Footer.astro';
+import Header from '../components/Header.astro';
+import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
+import Layout from '../layouts/BlogPost.astro';
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+        <style>
+            main{
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                margin-top: 10vh;
+            }
+            h1{
+                font-size: 50px;
+                font-weight: 700;
+                margin-bottom: 32px;
+                color: #1DD726;
+                
+  
+            }
+           
+            p{
+                font-size: 1.5rem;
+                font-weight: 400;
+                margin-bottom: 32px;
+            }
+            .address{
+                font-size: 20px;
+                text-align: center;
+                padding-bottom: 100px;
+                margin-bottom: 20px;
+            }
+            div{
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                margin-bottom: 32px;
+            }
+            a{
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                justify-content: center;
+                margin-bottom: 32px;
+                text-decoration: none;
+                color: #ffffff;
+                transition:0.4s;
+            }
+            a:hover{
+                text-shadow: 0 0 10px #1DD726, 0 0 20px #1DD726;
+            }
+            img{
+                width: 32px;
+                height: 32px;
+                margin-right: 16px;
+            }
+            span{
+                font-size: 1.5rem;
+                font-weight: 400;
+            }
+        </style>
+	</head>
+	<body>
+		<Header title={SITE_TITLE} />
+		<main>
+			<h1>Let's get in touch</h1>
+			<p>
+				Find us at
+			</p>
+			<p class="address">
+                PES Univeristy, Ring Road Campus</br>
+				100 Feet Ring Road, Banashankari Stage III, Dwaraka Nagar, Banashankari, Bengaluru, Karnataka 560085
+			</p>
+            
+            <div>
+                <a href="https://www.instagram.com/aura_pesu/"><img src="../assets/Contact/email.svg"/><span>Instagram text</span></a></br>
+                <a href="https://www.instagram.com/aura_pesu/"><img src="../assets/Contact/email.svg"/><span>Linkedin text</span></a></br>
+                <a href="https://www.instagram.com/aura_pesu/"><img src="../assets/Contact/email.svg"/><span>Email text</span></a>
+            </div>
+			
+		</main>
+		<Footer />
+	</body>
+</html>
