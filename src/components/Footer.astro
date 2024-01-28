@@ -4,21 +4,38 @@ import AIMLLogo from "../../public/footer_aiml.png";
 import { Image } from "astro:assets";
 ---
 
-<footer>
-  <section class="h-56 flex flex-row justify-between items-center p-8 mb-6">
-    <Image
-      src={AIMLLogo}
-      alt="AIML Department"
-      class="h-48 w-48 aspect-square object-contain"
-    />
-    <p>
-      Phone: aiml@placeholder.cum<br />
-      Email: +91 696969969<br />
-    </p>
-    <Image
-      src={PESULogo}
-      alt="PES University"
-      class="h-48 w-48 aspect-square object-contain"
-    />
-  </section>
-</footer>
+<head>
+  <script src="https://kit.fontawesome.com/8e64ffa55c.js"></script>
+</head>
+<body>
+  <footer>
+    <section class="h-56 flex flex-row justify-between items-center p-8 mb-6">
+      <Image
+        src={AIMLLogo}
+        alt="AIML Department"
+        class="h-40 w-40 aspect-square object-contain"
+      />
+      <div
+        class="social-icons flex flex-col md:flex-row gap-2 md:gap-6 items-center"
+      >
+        <a href="https://www.linkedin.com/company/aura-pesu/"
+          ><i class="fa-brands fa-linkedin text-black"></i></a
+        >
+        <a href="https://github.com/Aura-PESU"
+          ><i class="fa-brands fa-github text-black"></i></a
+        >
+        <a href="https://www.instagram.com/aura_pesu/"
+          ><i class="fa-brands fa-instagram text-black"></i></a
+        >
+        <a href="mailto: aura.rr@pes.edu"
+          ><i class="fa-solid fa-envelope text-black"></i></a
+        >
+      </div>
+      <Image
+        src={PESULogo}
+        alt="PES University"
+        class="h-40 w-40 aspect-square object-contain"
+      />
+    </section>
+  </footer>
+</body>
