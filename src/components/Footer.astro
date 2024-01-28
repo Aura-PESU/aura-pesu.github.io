@@ -1,5 +1,7 @@
 ---
-
+import PESULogo from "../../public/footer_pesu.png";
+import AIMLLogo from "../../public/footer_aiml.png";
+import { Image } from "astro:assets";
 ---
 
 <head>
@@ -7,19 +9,13 @@
 </head>
 <body>
   <footer>
-    <div class="row">
-      <div class="col1">
-        <div class="pesu-logo"></div>
-      </div>
-
-      <div class="col2">
-        <p>
-          Adapt to the future with AURA , Connect, Collaborate, and Code with
-          us!
-        </p>
-        <!-- change para content -->
-      </div>
-      <div class="social-icons">
+    <section class="h-56 flex flex-row justify-between items-center p-8 mb-6">
+      <Image
+        src={AIMLLogo}
+        alt="AIML Department"
+        class="h-48 w-48 aspect-square object-contain"
+      />
+      <div class="social-icons text-primary">
         <a href="https://www.linkedin.com/company/aura-pesu/"
           ><i class="fa-brands fa-linkedin"></i></a
         >
@@ -33,48 +29,16 @@
           ><i class="fa-solid fa-envelope"></i></a
         >
       </div>
-    </div>
+      <Image
+        src={PESULogo}
+        alt="PES University"
+        class="h-48 w-48 aspect-square object-contain"
+      />
+    </section>
   </footer>
 </body>
 
 <style>
-  footer {
-    background-color: #000000;
-    color: #ffffff;
-    padding: 80px 0 4px;
-    bottom: 0;
-    font-size: 13px;
-    line-height: 20px;
-  }
-  .row {
-    width: 85%;
-    margin: auto;
-    display: flex;
-    flex-wrap: wrap;
-    align-items: flex-start;
-    justify-content: space-between;
-  }
-  .col1 {
-    flex-basis: 25%;
-    padding: 10px;
-  }
-
-  .col2 p {
-    font-size: 18px;
-    width: 320px;
-  }
-  .col2 {
-    flex-basis: 25%;
-    padding: 10px;
-  }
-  .pesu-logo {
-    width: 155px;
-    height: 70px;
-    margin-bottom: 30px;
-    background-image: url("../assets/Footer/pesu-logo.webp");
-    font-size: 100px;
-  }
-
   .social-icons .fa-brands,
   .fa-solid {
     width: 60px;
@@ -87,7 +51,7 @@
     margin-top: 20px;
     cursor: pointer;
     transition: 0.3s;
-    color: #ffffff;
+    color: black;
   }
   .social-icons .fa-brands:hover,
   .fa-solid:hover {
