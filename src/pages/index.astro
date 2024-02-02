@@ -6,6 +6,7 @@ import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
 import Carousel from "../components/Carousel.jsx";
 import HeroImg from "../assets/home_bg.png";
 import { Image } from "astro:assets";
+import AboutContent from "../components/AboutContent.astro";
 ---
 
 <!doctype html>
@@ -15,7 +16,7 @@ import { Image } from "astro:assets";
   </head>
   <body>
     <Header title={SITE_TITLE} />
-    <main class="w-full h-screen">
+    <main class="w-full h-full">
       <div
         class="w-full flex flex-col lg:flex-row justify-between items-center gap-8"
       >
@@ -34,6 +35,7 @@ import { Image } from "astro:assets";
         />
         <Carousel client:load />
       </div>
+      <AboutContent />
     </main>
     <Footer />
   </body>

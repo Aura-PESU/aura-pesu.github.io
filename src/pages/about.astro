@@ -3,54 +3,7 @@ import BaseHead from "../components/BaseHead.astro";
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
 import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
-import hero from "../../public/home_bg.png";
-import { Image } from "astro:assets";
-import Logs from "../assets/About/Logistics.png";
-import Ops from "../assets/About/Operations.png";
-import SandO from "../assets/About/Social_and_Outreach.png";
-import Sponsor from "../assets/About/Sponsorship.png";
-import Tech from "../assets/About/Technical.png";
-import Vid from "../assets/About/Video.png";
-import AboutDomain from "../components/AboutDomain.astro";
-
-const domains = [
-  {
-    title: "Technical",
-    content:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus, possimus.",
-    img: Tech,
-  },
-  {
-    title: "Operations",
-    content:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus, possimus.",
-    img: Ops,
-  },
-  {
-    title: "Social and Outreach",
-    content:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus, possimus.",
-    img: SandO,
-  },
-  {
-    title: "Sponsorship",
-    content:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus, possimus.",
-    img: Sponsor,
-  },
-  {
-    title: "Logs",
-    content:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus, possimus.",
-    img: Logs,
-  },
-  {
-    title: "Videography and Editing",
-    content:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus, possimus.",
-    img: Vid,
-  },
-];
+import AboutContent from "../components/AboutContent.astro";
 ---
 
 <!doctype html>
@@ -60,45 +13,7 @@ const domains = [
   </head>
   <body>
     <Header title={SITE_TITLE} />
-    <main class="w-screen">
-      <div class="flex flex-col gap-y-8">
-        <section>
-          <h1 class="text-left font-bold">About Us</h1>
-          <section
-            class="flex flex-col lg:flex-row-reverse justify-between items-center"
-          >
-            <div class="w-full lg:w-2/5 flex rounded-none justify-center p-8">
-              <Image class="rounded-none" src={hero} alt="img" width={400} />
-            </div>
-            <div class="w-full lg:w-3/5 py-6 flex flex-col">
-              <div>
-                Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-                Adipisci alias ipsum fuga fugiat labore ducimus natus
-                perferendis beatae, maxime reiciendis quos at molestias minus
-                repudiandae accusantium quia. Reiciendis, provident nemo? Esse
-                id repellendus repellat nisi, quisquam quam quia quaerat
-                cupiditate similique fugit, dicta natus molestiae, velit fuga
-                dolorem numquam aut.
-              </div>
-            </div>
-          </section>
-        </section>
-        <section>
-          <h1 class="text-left font-bold">Domains</h1>
-          <section class="grid grid-cols-1 lg:grid-cols-3 w-full gap-8 mt-20">
-            {
-              domains.map((domain) => (
-                <AboutDomain
-                  title={domain.title}
-                  content={domain.content}
-                  img={domain.img}
-                />
-              ))
-            }
-          </section>
-        </section>
-      </div>
-    </main>
+    <AboutContent />
     <Footer />
   </body>
 </html>
