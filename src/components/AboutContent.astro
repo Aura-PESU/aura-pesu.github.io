@@ -6,51 +6,57 @@ import Sponsor from "../assets/About/Sponsorship.png";
 import Tech from "../assets/About/Technical.png";
 import Vid from "../assets/About/Video.png";
 import AboutDomain from "../components/AboutDomain.astro";
+import Design from "../assets/About/design.png";
+import { Image } from "astro:assets";
+const { img, title, content } = Astro.props;
 
 const domains = [
   {
     title: "Technical",
     content:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus, possimus.",
+      "The Technical Domain leads AI & ML education with hands-on workshops and insightful hackathons. They share valuable insights through engaging blogs, fostering continuous growth in the field",
     img: Tech,
   },
   {
     title: "Operations",
     content:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus, possimus.",
+      "Facilitating event approvals through navigating bureaucratic procedures and ensuring compliance for seamless execution.",
     img: Ops,
   },
   {
     title: "Social and Outreach",
     content:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus, possimus.",
+      "Promoting the club online, the team creates a vibrant digital presence and fosters community engagement through effective communication on social media platforms.",
     img: SandO,
   },
   {
     title: "Sponsorship",
     content:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus, possimus.",
+      "Securing financial support and partnerships, the Sponsorship team builds relationships with sponsors aligned with the club's mission for sustainability and success.",
     img: Sponsor,
   },
   {
     title: "Logs",
     content:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus, possimus.",
+      "Acquiring necessary resources, the Logistics team ensures all materials for events, from venues to equipment, are in place for success.",
     img: Logs,
   },
   {
     title: "Videography and Editing",
     content:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus, possimus.",
+      "Capturing and editing event footage, the team creates compelling video content that represents the club's activities.",
     img: Vid,
+  },
+  {
+    title:"Design",
+    content: "Bringing creativity to life, the Designs team enhances the aesthetic and branding of events with visually appealing materials.",
+    img:Design,
   },
 ];
 ---
 
 <div class="flex flex-col gap-y-8 w-full">
-  <section
-    class="flex flex-col lg:flex-row-reverse w-full justify-between lg:pr-24 gap-4"
-  >
+  <section class="flex flex-col lg:flex-row-reverse w-full justify-between lg:">
     <section class="flex flex-col items-start">
       <div class="flex flex-row justify-center gap-2">
         <img
@@ -64,12 +70,20 @@ const domains = [
       </div>
       <div class="w-full py-6 flex flex-col">
         <div>
-          Lorem ipsum dolor sit amet consectetur, adipisicing elit. Adipisci
-          alias ipsum fuga fugiat labore ducimus natus perferendis beatae,
-          maxime reiciendis quos at molestias minus repudiandae accusantium
-          quia. Reiciendis, provident nemo? Esse id repellendus repellat nisi,
-          quisquam quam quia quaerat cupiditate similique fugit, dicta natus
-          molestiae, velit fuga dolorem numquam aut.
+          Welcome to the CSE(AI&ML) Club, a dynamic community dedicated to
+          exploring and advancing knowledge in Artificial Intelligence (AI) and
+          Machine Learning (ML). Our focus is on cutting-edge technologies and
+          practical applications. 1] Advancing AI and ML Knowledge: Our club
+          serves as a central hub for enthusiasts and experts alike to deepen
+          their understanding of AI and various facets of ML, fostering a
+          collaborative environment for exploration. 2] Practical Skill
+          Development: We prioritize hands-on learning through workshops,
+          projects, and collaborative initiatives. Members gain practical skills
+          in implementing ML algorithms, working with datasets, and tackling
+          real-world problems. 3] Knowledge Sharing and Outreach: Integral to
+          our mission is sharing ML knowledge beyond our community. We actively
+          promote knowledge sharing through seminars, tutorials, and outreach
+          programs, extending the impact of ML beyond our club members.
         </div>
       </div>
     </section>
@@ -86,6 +100,7 @@ const domains = [
           />
         ))
       }
+      
     </section>
   </section>
 </div>
